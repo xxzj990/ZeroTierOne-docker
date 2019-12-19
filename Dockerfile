@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y curl gnupg
 RUN apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys 0x1657198823e52a61  && \
     echo "deb http://download.zerotier.com/debian/buster buster main" > /etc/apt/sources.list.d/zerotier.list
 RUN apt-get update && apt-get install -y zerotier-one=1.4.4
-COPY ext/installfiles/linux/zerotier-containerized/main.sh /var/lib/zerotier-one/main.sh
+COPY main.sh /var/lib/zerotier-one/main.sh
 
 FROM debian:buster-slim
 LABEL version="1.4.4"
